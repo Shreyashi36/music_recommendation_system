@@ -203,7 +203,7 @@ custom_css = '''
 <style>
     /* Main background and font styles */
     body {
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
         font-family: 'Poppins', sans-serif;
         color: white;
     }
@@ -211,18 +211,20 @@ custom_css = '''
     /* Header styling */
     .main-header {
         text-align: center;
-        padding: 2rem 0;
-        background: rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        margin-bottom: 2rem;
+        padding: 2.5rem 0;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        margin-bottom: 2.5rem;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        border-bottom: 3px solid rgba(69, 104, 220, 0.3);
     }
 
     .main-header h1 {
         font-size: 3rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
-        background: linear-gradient(90deg, #ff8a00, #e52e71);
+        background: linear-gradient(90deg, #4568dc, #b06ab3);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -236,35 +238,44 @@ custom_css = '''
 
     /* Button styling */
     .stButton > button {
-        background: linear-gradient(90deg, #ff8a00, #e52e71);
+        background: linear-gradient(90deg, #4568dc, #b06ab3);
         color: white;
         border: none;
         border-radius: 30px;
-        padding: 0.8rem 2rem;
+        padding: 0.8rem 2.5rem;
         font-size: 1.2rem;
         font-weight: 600;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
+        margin: 0 auto;
+        display: block;
     }
 
     .stButton > button:hover {
         transform: translateY(-3px);
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(90deg, #5e7cef, #c278c9);
     }
 
     /* Song recommendation styling */
     .song-container {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
         padding: 1.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
+        border-left: 4px solid rgba(69, 104, 220, 0.6);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .song-container:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.12);
+        border-left: 4px solid rgba(176, 106, 179, 0.8);
     }
 
     .song-title {
@@ -276,17 +287,20 @@ custom_css = '''
     .song-title a {
         color: #ffffff;
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
     }
 
     .song-title a:hover {
-        color: #ff8a00;
+        color: #b06ab3;
+        text-shadow: 0 0 5px rgba(176, 106, 179, 0.5);
     }
 
     .artist-name {
         font-size: 1rem;
         color: #e0e0e0;
         font-style: italic;
+        padding-left: 0.5rem;
+        border-left: 2px solid rgba(69, 104, 220, 0.4);
     }
 
     /* Footer styling */
@@ -294,14 +308,29 @@ custom_css = '''
         text-align: center;
         padding: 2rem 0;
         margin-top: 3rem;
-        background: rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
     }
 
     .footer h3 {
         font-size: 1.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         color: #e0e0e0;
+        position: relative;
+        display: inline-block;
+    }
+
+    .footer h3:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background: linear-gradient(90deg, #4568dc, #b06ab3);
+        bottom: -10px;
+        left: 25%;
+        border-radius: 3px;
     }
 
     .team-members {
@@ -309,45 +338,50 @@ custom_css = '''
         flex-wrap: wrap;
         justify-content: center;
         gap: 1.5rem;
+        margin-top: 1rem;
     }
 
     .team-member {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.08);
         padding: 0.8rem 1.5rem;
         border-radius: 30px;
         font-weight: 500;
         color: white;
         transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     a .team-member {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.12);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     a .team-member:hover {
-        background: linear-gradient(90deg, #ff8a00, #e52e71);
+        background: linear-gradient(90deg, #4568dc, #b06ab3);
         transform: translateY(-3px);
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        border-color: transparent;
     }
 
     /* Status messages */
     .success-message {
-        background: linear-gradient(90deg, #00b09b, #96c93d);
+        background: linear-gradient(90deg, #43cea2, #185a9d);
         color: white;
         padding: 1rem;
         border-radius: 10px;
         text-align: center;
         margin: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     .warning-message {
-        background: linear-gradient(90deg, #ff8a00, #e52e71);
+        background: linear-gradient(90deg, #ff512f, #dd2476);
         color: white;
         padding: 1rem;
         border-radius: 10px;
         text-align: center;
         margin: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     /* Section headers */
@@ -363,9 +397,12 @@ custom_css = '''
     /* Dividers */
     .divider {
         height: 3px;
-        background: linear-gradient(90deg, #ff8a00, #e52e71);
-        margin: 1.5rem 0;
+        background: linear-gradient(90deg, #4568dc, #b06ab3);
+        margin: 2rem auto;
         border-radius: 3px;
+        width: 80%;
+        max-width: 800px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 </style>
 
@@ -384,12 +421,13 @@ st.markdown('''
 </div>
 ''', unsafe_allow_html=True)
 
-col1,col2,col3 = st.columns(3)
+# Create a centered container for the button
+_, col2, _ = st.columns([1, 2, 1])
 
 list = []
-# Create a container for the scan button
-st.markdown('<div style="display: flex; justify-content: center; margin: 2rem 0;">', unsafe_allow_html=True)
-if st.button('SCAN MY EMOTION'):
+# Use the middle column for the button to center it
+with col2:
+    if st.button('SCAN MY EMOTION'):
 
         count = 0
         list.clear()
@@ -471,10 +509,6 @@ if st.button('SCAN MY EMOTION'):
 
         list = pre(list)
         st.markdown('<div class="success-message">Emotions successfully detected! Finding your perfect music...</div>', unsafe_allow_html=True)
-
-
-# Close the button container div
-st.markdown('</div>', unsafe_allow_html=True)
 
 new_df = fun(list)
 
