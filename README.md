@@ -47,4 +47,4 @@ This application uses computer vision and machine learning to:
 
 ## Note
 
-This project was developed as part of a final year academic project in 2023-2024.
+This project was developed as part of a final year academic project in 2024-2025.
